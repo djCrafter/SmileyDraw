@@ -1,10 +1,7 @@
 package com.example.simpledraw
 
 import android.content.Context
-import android.graphics.Canvas
-import android.graphics.Paint
-import android.graphics.RectF
-import android.graphics.Typeface
+import android.graphics.*
 import android.util.AttributeSet
 import android.view.View
 
@@ -54,5 +51,10 @@ class Smiley(context: Context, attrs: AttributeSet) : View(context, attrs)
         fillPaintRed.typeface = Typeface.create(Typeface.MONOSPACE, Typeface.BOLD)
         fillPaintRed.textSize = 35f
         canvas.drawText("Hello Smiley!!!", 20f, 400f, fillPaintRed)
+
+        //DrawImage
+        var bender = BitmapFactory.decodeResource(resources, R.drawable.bender)
+        bender = Bitmap.createScaledBitmap(bender, 300, 550, false)
+        canvas.drawBitmap(bender, 100f, 450f, null)
     }
 }
